@@ -1,0 +1,31 @@
+{
+  "name": "insensitive",
+  "version": "1.0.0",
+  "description": "A library to make working with case-insensitive code much easier",
+  "main": "insensitive.min.js",
+  "scripts": {
+    "build": "rollup -c | uglifyjs -o insensitive.min.js",
+    "pretest": "npm run build",
+    "test": "jest --coverage --collectCoverageFrom=insensitive.js --detectOpenHandles --runInBand",
+    "gzip": "gzip -c insensitive.min.js | wc -c && echo 'bytes' # Only for Unix"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/franciscop/insensitive.git"
+  },
+  "keywords": [],
+  "author": "Francisco Presencia <public@francisco.io> (https://francisco.io/)",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/franciscop/insensitive/issues"
+  },
+  "homepage": "https://github.com/franciscop/insensitive#readme",
+  "devDependencies": {
+    "babel-core": "^6.26.0",
+    "babel-jest": "^21.2.0",
+    "babel-preset-env": "^1.6.1",
+    "rollup": "^0.50.0",
+    "rollup-plugin-node-resolve": "^3.4.0",
+    "uglify-es": "^3.1.3"
+  }
+}
